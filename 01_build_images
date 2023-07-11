@@ -2,10 +2,6 @@ docker run -it ubuntu
 
 # -it: interactive. Otherwise, container will stop immediately.
 
-# docker-compose.yml:
-
 -p port mapping
 -v volume mapping
-
-
 
