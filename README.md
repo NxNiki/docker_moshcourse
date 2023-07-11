@@ -2,7 +2,7 @@
 
 ## Section 1
 
-###What is docker?
+### What is docker?
 Docker is a platform for building, running, and shipping applications in a consistent manner.
 
 Problems in development:
@@ -18,16 +18,16 @@ Docker can also easily remove the dependencies associated with an application wh
   `docker-compose down --rmi all`
 
 
-###Container: An isolated environment for running an application.
+### Container: An isolated environment for running an application.
   Allow running multiple apps in isolation
   Lightweight
   Use the OS of the host
   Start quickly
   Need fewer hardware resources (no need to assign CPU cores or memory space)
 
-###Virtual machine: an abstraction of a machine (physical hardware). Use hypervisor to create and manage virtual machines.
+### Virtual machine: an abstraction of a machine (physical hardware). Use hypervisor to create and manage virtual machines.
 
-#### Docker architecture:
+### Docker architecture:
 
 Client: client talks to server using RESTful API
 
