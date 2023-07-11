@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  web:
+    build: ./frontend
+    ports:
+      - 3000:3000
+  web-tests:
+    image: vidly_web
+    volumns:
+      - ./frontend:/app
+    command: npm test
+  api:
+    build: ./backend
+    ports:
+      - 3001:3001
+    environment:
+      DB_URL: mongodb://db/vidly
+      
