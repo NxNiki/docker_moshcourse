@@ -12,9 +12,11 @@ Different configuration setting
 
 
 Docker download and run dependencies in a container, which is an isolated environment that allows multiple applications use different versions of some software side by side.
+
   `docker-compose up`
   
 Docker can also easily remove the dependencies associated with an application when it is not in use.
+
   `docker-compose down --rmi all`
 
 
@@ -38,7 +40,8 @@ The container is technically a special process that runs on the computer. All co
 
 ### install docker:
 check if docker is installed:
-  docker version
+
+  `docker version`
 
 
 
