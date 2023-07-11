@@ -1,0 +1,6 @@
+docker run -it ubuntu
+
+# -it: interactive, otherwise container will stop immediately.
+
+
+
