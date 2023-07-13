@@ -21,10 +21,15 @@ Docker can also easily remove the dependencies associated with an application wh
 
 
 ### Container: An isolated environment for running an application.
+  
   Allow running multiple apps in isolation
+  
   Lightweight
+  
   Use the OS of the host
+  
   Start quickly
+  
   Need fewer hardware resources (no need to assign CPU cores or memory space)
 
 ### Virtual machine: an abstraction of a machine (physical hardware). Use hypervisor to create and manage virtual machines.
