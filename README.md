@@ -1,4 +1,4 @@
-# Notes of the online course on docker
+e # Notes of the online course on docker
 
 ## Section 1
 
@@ -65,10 +65,10 @@ Image:
   
   Environment variables
 
-Docker starts a container using an image. A container is a special process that has its own file system, which is provided by the image. Instead of launching an application and running it inside a typical process, we tell docker to run it inside a container.
+Docker starts a container using an image. A container is a special process with its own file system, provided by the image. Instead of launching and running an application inside a typical process, we tell docker to run it inside a container.
 
-Beauty of Docker:
-An image can be pushed to a Docker registry (Docker Hub), then it can be put on any machines running docker. We can pack an application with an image and run it anywhere.
+The beauty of Docker:
+An image can be pushed to a Docker registry (Docker Hub), then put on any machines running Docker. We can pack an application with an image and run it anywhere.
 
 
 Create Dockerfile:
@@ -81,7 +81,7 @@ WORKDIR /app
 CMD node app.js
 ```
 
-Package up our application, run in terminal:
+Package up our application, and run it in terminal:
 
 `docker build -t (tag to identify the image) hello-docker . (specify where to find Dockerfile eg. in current directory)`
 
@@ -92,10 +92,58 @@ list the docker images:
 Run image:
   `docker run hello-docker`
 
-We can push this image to docker hub so that it can be pulled on any computer. Search for play with docker and enjoy!
+We can push this image to the docker hub to pull it on any computer. Search for play with Docker and enjoy!
+
 
   `docker pull codewithmosh/hello-docker`
   `docker images`
   `docker run codewithmosh/hello-docker`
 
-  
+
+## Section 3:
+
+- Creating Docker files
+- Versioning images
+- Sharing images
+- Saving and loading images
+- Reducing the image size
+- Speeding up builds
+
+### Docker file instructions:
+
+```
+FROM node:14.16.0-alpine3.13 # specifying the base image, find images on docker hub
+```
+
+Build image:
+`docker build -t react-app .` 
+`-t: tagging the image
+`.`: tell docker where to find the docker file
+
+`docker run -it react app
+This will lead us to a node environment where we can write javascript code. Press Ctrl+C to exit.
+
+`docker run -t react-app sh`
+This starts the shell so we can check the files in the container.
+
+
+Copy application files into the image:
+```
+FROM node:14.16.0-alpine3.13
+COPY package*.json /app # docker automatically creates the directory if it does not exist.
+```
+
+```
+FROM node:14.16.0-alpine3.13
+WORKDIR /app # setting the working directory.
+COPY . . # This will copy files to the working directory.
+# COPY ["hello word.txt", "."] # This is useful when we have spaces in the file name.
+# ADD HTTP://.../file.json .  # ADD has two additional features compared to COPY, we can add files from a URL, it will automatically uncompress the file
+# ADD file.zip .
+```
+
+
+Excluding files and directories:
+- build is faster
+- avoid transferring too many files to the docker engine.
+
