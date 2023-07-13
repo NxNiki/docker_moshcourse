@@ -1,4 +1,4 @@
-e # Notes of the online course on docker
+Notes of the online course on docker
 
 ## Section 1
 
