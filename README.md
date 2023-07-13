@@ -54,10 +54,15 @@ Dockerize an application:
 Dockerfile: a plain text file that includes instructions that docker uses to package an application into an image. This image contains everything the application needs to run.
 
 Image:
+
   A cut-down OS
+  
   A runtime environment (eg. Node)
+  
   Application files.
+  
   Third-party libraries
+  
   Environment variables
 
 Docker starts a container using an image. A container is a special process that has its own file system, which is provided by the image. Instead of launching an application and running it inside a typical process, we tell docker to run it inside a container.
@@ -67,12 +72,14 @@ An image can be pushed to a Docker registry (Docker Hub), then it can be put on 
 
 
 Create Dockerfile:
+```
 FROM node:alpine # base image that is officially published on docker hub.
 COPY . /app # copy all the files in the current directory into the app directory into that image. (app is created automatically)
 CMD node /app/app.js
 or
 WORKDIR /app
 CMD node app.js
+```
 
 Package up our application, run in terminal:
 
